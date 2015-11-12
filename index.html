@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Floating CV</title>
+	<meta charset="utf-8" />
+	<link href="floatingcv.css" rel="stylesheet" />
+	<script src="jquery-1.11.3.js"></script>
+	<script src="floatingcv.js"></script>
+</head>
+<body>
+	<div id="templates">
+		<div class="assignment" data-id="-1">
+			<div class="title">Title</div>
+			<div class="customer">Customer</div>
+			<img class="logo" src="img/daffy.jpg" alt="" />
+			<div class="grade">10</div>
+		</div>
+		<div class="tag" data-id="-1"><span>Tag</span><div class="delete"></div></div>
+	</div>
+
+	<div id="modals">
+		<div id="assignmentdetails" class="modal" data-id="-1">
+			<h2 class="title">Team Coach</h2>
+			<h3 class="customer">RVO Dictu</h3>
+
+			<div class="grade">7.5</div>
+
+			<div class="contact">
+				<div class="address">Address</div>
+				<div class="postalcode">Postal Code</div>
+				<div class="city">City</div>
+				<div class="mail">Mail</div>
+				<div class="phone">Phone</div>
+			</div>
+
+			<div class="description">lorem ipsum dolar ...</div>
+
+			<div class="tags"></div>
+
+			<footer>
+				<div class="button edit">Edit</div>
+				<div class="button close">Close</div>
+				<div class="button delete">Delete</div>
+			</footer>
+		</div>
+		<div id="assignmentedit" class="modal" data-id="-1">
+			<h2 class="title">Edit assignment</h2>
+
+			<dl>
+				<dt>Title</dt>
+				<dd><input type="text" id="edittitle" /></dd>
+				<dt>Customer</dt>
+				<dd><input type="text" id="editcustomer" /></dd>
+				<dt>Grade</dt>
+				<dd><input type="text" id="editgrade" /></dd>
+				<dt>Address</dt>
+				<dd><input type="text" id="editaddress" /></dd>
+				<dt>Postal Code</dt>
+				<dd><input type="text" id="editpostalcode" /></dd>
+				<dt>City</dt>
+				<dd><input type="text" id="editcity" /></dd>
+				<dt>Mail</dt>
+				<dd><input type="text" id="editmail" /></dd>
+				<dt>Phone</dt>
+				<dd><input type="text" id="editphone" /></dd>
+			</dl>
+
+			<div class="description"><textarea id="editdescription">lorem ipsum dolar ...</textarea></div>
+
+			<div class="tags">
+				<input type="text" id="edittags" />
+			</div>
+
+			<footer>
+				<div class="button save">Save</div>
+				<div class="button close">Cancel</div>
+			</footer>
+		</div>
+	</div>
+
+	<header>
+		<h1>Magnifi CV</h1>
+	</header>
+	<section id="assignments">
+		<div id="addassignment">+</div>
+	</section>
+
+	<footer>
+		<div class="button local">Local Storage</div>
+		<div class="button memory">Memory</div>
+		<div class="button rest">Rest API</div>
+	</footer>
+</body>
+</html>

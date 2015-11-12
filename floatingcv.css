@@ -1,0 +1,317 @@
+﻿html{
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: rgba(240, 220, 220, 0.5);
+}
+
+
+.icon{
+	background-image: url('img/icons.png');
+	background-position: -310px -190px;
+	width: 30px;
+	height: 30px;
+}
+
+
+
+
+header {
+    text-align: right;
+    padding-right: 5%;
+}
+header h1 {
+    font-size: 72px;
+    font-weight: bold;
+    color: #444;
+}
+
+footer {
+    position: absolute;
+    width: 80%;
+    height: 50px;
+    bottom: 10px;
+    margin: 0 10%;
+}
+    footer .button {
+        float: right;
+        background-color: rgba(15,240,15,0.5);
+        border: 3px solid white;
+        border-radius: 10px;
+        padding: 5px;
+        color: white;
+        margin: 5px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px 2px rgba(0,0,0,0.4);
+    }
+        footer .button.disabled {
+            background-color: rgb(220,220,220);
+        }
+
+#templates {
+    display: none;
+}
+
+.modal {
+    position: absolute;
+    top: 20px;
+    right: 20%;
+    left: 20%;
+    padding: 20px 20px 60px 20px;
+    border-radius: 30px;
+    background-color: #EB471A;
+    border: 3px solid #fff;
+    z-index: 200;
+    box-shadow: 3px 3px 3px 6px rgba(0,0,0,0.4);
+}
+    .modal .title {
+        margin: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 20%;
+
+        color: #fff;
+        font-size: 48px;
+        font-weight: bold;
+    }
+    .modal .customer {
+        margin: 0;
+        padding-top: 0;
+        padding-bottom: 10px;
+        padding-left: 25%;
+
+        color: #ddd;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .modal .contact {
+        font-style: italic;
+        font-weight: bold;
+    }
+        .modal .contact div {
+            border-right: 2px solid #333;
+            margin: 5px 0px;
+            padding: 0px 10px;
+            display: inline-block;
+        }
+            .modal .contact div:last-child {
+                border-right: 0px solid #333;
+            }
+
+#assignmentedit {
+    display: none;
+}
+#assignmentedit dl dt{
+    color: #fff;
+    float: left;
+}
+#assignmentedit dl dd{
+    text-align: left;
+    margin-left: 150px;
+}
+#assignmentedit .description{
+    min-height: 50px;
+}
+    #assignmentedit .description textarea {
+        width: 100%;
+        height: 50px;
+        overflow: hidden;
+    }
+    #assignmentedit .description textarea:focus {
+        width: 100%;
+        height: 200px;
+        overflow: auto;
+    }
+#assignmentedit .tags{
+    min-height: 150px;
+}
+#assignmentedit .tags input{
+    height: 20px;
+    width: 80%;
+    margin: 0 10%;
+    padding: 0;
+    border: 3px solid #2A67EB;
+}
+    #assignmentedit .tags .tag .delete {
+        cursor: pointer;
+    }
+
+#assignmentdetails {
+    display: none;
+}
+    #assignmentdetails .description {
+        margin: 20px 0px;
+        padding: 0px 5%;
+        width: 90%;
+        max-height: 200px;
+        overflow: hidden;
+    }
+        #assignmentdetails .description.unbounded {
+            max-height: none;
+        }
+    #assignmentdetails .tags .tag .delete {
+        display: none;
+    }
+
+.assignment {
+    width: 400px;
+    height: 100px;
+    position: relative;
+    border-radius: 10px 50px 50px 10px;
+    background-color: #EB471A;
+    border: 3px solid #fff;
+
+    position: relative;
+
+    margin: 15px;
+    float: left;
+
+    cursor: pointer;
+
+    box-shadow: 1px 1px 1px 2px rgba(0,0,0,0.4);
+}
+    .assignment .title {
+        position: absolute;
+        top: 10px;
+        left: 80px;
+        width: 200px;
+        height: 30px;
+        overflow: hidden;
+
+        color: #fff;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .assignment .logo {
+        width: 60px;
+        height: 80px;
+
+        position: absolute;
+        left: 8px;
+        top: 8px;
+
+        background-color: #fff;
+        border-radius: 5px;
+        border: 2px solid #fff;
+    }
+    .assignment .customer {
+        position: absolute;
+        bottom: 10px;
+        left: 80px;
+        width: 200px;
+        height: 30px;
+        overflow: hidden;
+
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+    }
+.grade {
+    width: 80px;
+    height: 65px;
+    border-radius: 40px;
+    background-color: #fff;
+
+    text-align: center;
+    font-weight: bold;
+    font-size: 48px;
+    color: #111;
+    padding-top: 15px;
+
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.tag {
+    margin: 5px 0px 5px 5px;
+    padding: 10px 15px;
+    background-color: #2A67EB;
+    border: 2px solid #fff;
+    display: inline;
+    min-width: 25px;
+    border-radius: 10px;
+    color: #ccc;
+    font-weight: bold;
+    float: left;
+    padding: 10px;
+    position: relative;
+    box-shadow: 1px 1px 1px 2px rgba(0,0,0,0.4);
+}
+    .tag .delete {
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        position: absolute;
+        right: 3px;
+        top: 3px;
+        background-color: #000;
+    }
+
+.tags{
+    margin: 10px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    min-height: 50px;
+}
+    .tags:after {
+        clear: both;
+    }
+
+#assignments {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 30px;
+    border: 3px solid #888;
+    background-color: #ccc;
+
+    position: absolute;
+    top: 120px;
+    left: 5%;
+    right: 5%;
+    bottom: 50px;
+
+    overflow: auto;
+}
+	#assignments .error{
+		margin: 20px auto 20px auto;
+		padding: 50px 10px 50px 10px;
+		width: 50%;
+		text-align: center;
+		background-color: rgb(220,220,220);
+		color: rgb(100,100,100);
+		border: 3px solid #2A67EB;
+		border-radius: 25px;
+		font-size: 32px;
+		font-weight: bold;
+	}
+    #assignments.loading {
+        background-color: lightblue;
+    }
+        #assignments.loading #addassignment {
+            display: none;
+        }
+
+#addassignment {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    background-color: rgba(15,240,15,0.5);
+    color: #fff;
+    text-align: center;
+    vertical-align: central;
+    font-size: 92px;
+    font-weight: bolder;
+
+    margin: 15px;
+    float: left;
+
+    box-shadow: 1px 1px 1px 2px rgba(0,0,0,0.4);
+    cursor: pointer;
+}
