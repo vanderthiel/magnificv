@@ -21,12 +21,12 @@
 
     var CvModule = (function () {
         // Service - internal, no storage
-        var InternalCvService = function () {
-            function Cv() {
+        var InternalCvServiceFactory = function () {
+            function CvService() {
                 this.assignments = [];
                 this.ctr = 1;
             }
-            Cv.prototype.createAssignment = function (assigment) {
+            CvService.prototype.createAssignment = function (assigment) {
                 var promise = $.Deferred();
 
                 this.assignments.push(assigment);
@@ -35,7 +35,7 @@
                 promise.resolve();
                 return promise;
             }
-            Cv.prototype.readAssignment = function (id) {
+            CvService.prototype.readAssignment = function (id) {
                 var promise = $.Deferred();
 
                 for (var el = 0; el < this.assignments.length; el++) {
@@ -48,7 +48,7 @@
                 promise.reject();
                 return promise;
             }
-            Cv.prototype.updateAssignment = function (assigment) {
+            CvService.prototype.updateAssignment = function (assigment) {
                 var promise = $.Deferred();
 
                 this.readAssignment(assigment.id).then(function (stored) {
@@ -69,7 +69,7 @@
                 });
                 return promise;
             }
-            Cv.prototype.deleteAssignment = function (id) {
+            CvService.prototype.deleteAssignment = function (id) {
                 var promise = $.Deferred();
 
                 for (var el = 0; el < this.assignments.length; el++) {
@@ -81,25 +81,25 @@
                 promise.resolve();
                 return promise;
             }
-            Cv.prototype.listAssignments = function () {
+            CvService.prototype.listAssignments = function () {
                 var promise = $.Deferred();
 
                 promise.resolve(this.assignments);
                 return promise;
             }
 
-            return new Cv();
+            return new CvService();
         };
 
         // Service - local storage
-        var LocalCvService = function (key) {
-            function Cv(key) {
+        var LocalCvServiceFactory = function (key) {
+            function CvService(key) {
                 if (!localStorage) {
                     throw new Error("No local storage available");
                 }
                 this.key = key;
             }
-            Cv.prototype.createAssignment = function (assigment) {
+            CvService.prototype.createAssignment = function (assigment) {
                 var promise = $.Deferred();
 
                 var _assigment = assigment;
@@ -119,7 +119,7 @@
 
                 return promise;
             }
-            Cv.prototype.readAssignment = function (id) {
+            CvService.prototype.readAssignment = function (id) {
                 var promise = $.Deferred();
 
                 this.listAssignments().then(function (assignments) {
@@ -134,7 +134,7 @@
 
                 return promise;
             }
-            Cv.prototype.updateAssignment = function (assigment) {
+            CvService.prototype.updateAssignment = function (assigment) {
                 var promise = $.Deferred();
 
                 var _assigment = assigment;
@@ -165,7 +165,7 @@
 
                 return promise;
             }
-            Cv.prototype.deleteAssignment = function (id) {
+            CvService.prototype.deleteAssignment = function (id) {
                 var promise = $.Deferred();
 
                 this.listAssignments().then(function (assignments) {
@@ -182,7 +182,7 @@
 
                 return promise;
             }
-            Cv.prototype.listAssignments = function () {
+            CvService.prototype.listAssignments = function () {
                 var promise = $.Deferred();
 
                 var assignments = localStorage.getItem(key);
@@ -194,15 +194,15 @@
                 return promise;
             }
 
-            return new Cv(key);
+            return new CvService(key);
         };
 
         // Service - REST storage
-        var RestCvService = function (endpoint) {
-            function Cv(endpoint) {
+        var RestCvServiceFactory = function (endpoint) {
+            function CvService(endpoint) {
                 this.endpoint = endpoint;
             }
-            Cv.prototype.createAssignment = function (assigment) {
+            CvService.prototype.createAssignment = function (assigment) {
                 var promise = $.Deferred();
 
                 $.ajax({
@@ -218,7 +218,7 @@
 
                 return promise;
             }
-            Cv.prototype.readAssignment = function (id) {
+            CvService.prototype.readAssignment = function (id) {
                 var promise = $.Deferred();
 
                 var con = this;
@@ -232,7 +232,7 @@
 
                 return promise;
             }
-            Cv.prototype.updateAssignment = function (assigment) {
+            CvService.prototype.updateAssignment = function (assigment) {
                 var promise = $.Deferred();
 
                 $.ajax({
@@ -248,7 +248,7 @@
 
                 return promise;
             }
-            Cv.prototype.deleteAssignment = function (id) {
+            CvService.prototype.deleteAssignment = function (id) {
                 var promise = $.Deferred();
 
                 $.ajax({
@@ -261,7 +261,7 @@
 
                 return promise;
             }
-            Cv.prototype.listAssignments = function () {
+            CvService.prototype.listAssignments = function () {
                 var promise = $.Deferred();
 
                 var con = this;
@@ -282,7 +282,7 @@
             }
 
             // Conversion functions to / from endpoint
-            Cv.prototype.convertFrom = function(assignment){
+            CvService.prototype.convertFrom = function(assignment){
                 var result = {
                     Id: assignment.id,
                     GebruikerId: 1,
@@ -297,7 +297,7 @@
 
                 return result;
             }
-            Cv.prototype.convertTo = function(data){
+            CvService.prototype.convertTo = function(data){
                 var result = new Assignment(
                     data.Id,
                     data.Titel,
@@ -314,7 +314,7 @@
                 return result;
             }
 
-            return new Cv(endpoint);
+            return new CvService(endpoint);
         };
 
         // Controller
@@ -492,13 +492,13 @@
         return {
             service: {
                 createInternal: function () {
-                    return InternalCvService();
+                    return InternalCvServiceFactory();
                 },
                 createLocal: function (key) {
-                    return LocalCvService(key);
+                    return LocalCvServiceFactory(key);
                 },
                 createRest: function (endpoint) {
-                    return RestCvService(endpoint);
+                    return RestCvServiceFactory(endpoint);
                 }
             },
             controller: {
