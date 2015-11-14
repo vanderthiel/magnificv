@@ -94,7 +94,7 @@
         // Service - local storage
         var LocalCvServiceFactory = function (key) {
             function CvService(key) {
-                if (!localStorage) {
+                if (!this.testLocalStorage()) {
                     throw new Error("No local storage available");
                 }
                 this.key = key;
@@ -186,13 +186,24 @@
                 var promise = $.Deferred();
 
                 var assignments = localStorage.getItem(key);
-                if (!assignments) return [];
+                if (!assignments) assignments = [];
                 if (typeof (assignments) === 'string')
                     assignments = JSON.parse(assignments);
 
                 promise.resolve(assignments);
                 return promise;
             }
+
+            CvService.prototype.testLocalStorage = function () {
+				var test = 'test';
+				try {
+					localStorage.setItem(test, test);
+					localStorage.removeItem(test);
+					return true;
+				} catch(e) {
+					return false;
+				}
+			}
 
             return new CvService(key);
         };
