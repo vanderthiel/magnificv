@@ -329,7 +329,7 @@
         };
 
         // Controller
-        var CvController = function (service) {
+        var CvControllerFactory = function (service) {
             function Controller(service) {
                 this.service = service;
                 this.temp = new Assignment();
@@ -514,7 +514,7 @@
             },
             controller: {
                 create: function (service) {
-                    return CvController(service);
+                    return CvControllerFactory(service);
                 }
             }
         };

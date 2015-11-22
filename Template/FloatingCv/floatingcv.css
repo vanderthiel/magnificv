@@ -1,0 +1,40 @@
+﻿html{
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: rgba(240, 220, 220, 0.5);
+}
+
+header {
+    text-align: right;
+    padding-right: 5%;
+}
+header h1 {
+    font-size: 72px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* css - footer */
+
+/* css - templates */
+
+/* css - modal */
+
+/* css - modal - edit - hide */
+
+/* css - modal - edit */
+
+/* css - modal - details - hide */
+
+/* css - modal - details */
+
+/* css - assignment */
+
+/* css - tags */
+
+/* css - assignments */
