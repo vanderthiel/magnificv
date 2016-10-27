@@ -1,0 +1,1 @@
+$("#bereken").click(function(){alert("just got clicked!");});
