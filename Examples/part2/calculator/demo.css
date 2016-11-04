@@ -1,0 +1,18 @@
+.button {
+	background-color: lightgray;
+	color: black;
+	border: 1px solid gray;
+	border-radius: 4px;
+	padding: 10px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+#result{
+	color: white;
+	background-color: green;
+	padding: 25px;
+	font-size: 24px;
+	font-weight:  bold;
+	display: none;
+}
