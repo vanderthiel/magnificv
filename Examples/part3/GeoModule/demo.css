@@ -1,0 +1,15 @@
+.button{
+	background-color: blue;
+	border-radius: 10px;
+	display: block;
+	width: 150px;
+}
+
+.form{
+	border: solid 1px black;
+	display: none;
+}
+
+.form.alert > input[type=text]
+{
+}
