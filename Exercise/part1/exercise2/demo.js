@@ -4,12 +4,9 @@ var oppervlakte;
 // --------------------------------------------------------------------
 // Schrijf hier je code
 
-function Rectangle(breedte, hoogte) {
+function calculate(breedte, hoogte) {
 
 }
-Rectangle.prototype.calculate = function(){
-
-};
 
 // --------------------------------------------------------------------
 
