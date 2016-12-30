@@ -42,19 +42,21 @@ $(document).ready(function(){
 		};
 		
 		return {
-			rect: RectangleFactory,
-			cir: CircleFactory,
+			shapes: {
+				rect: RectangleFactory,
+				cir: CircleFactory
+			},
 			controller: ShapeControllerFactory
 		};
 	})();
 	
 	$("#rect").click(function(){
-		var rect = MyModule.rect($("#x").val(),$("#y").val());
+		var rect = MyModule.shapes.rect($("#x").val(),$("#y").val());
 		var controller = MyModule.controller(rect);
 		console.log(controller.Surface());
 	});
 	$("#circle").click(function(){
-		var circle = MyModule.cir($("#x").val());
+		var circle = MyModule.shapes.cir($("#x").val());
 		var controller = MyModule.controller(circle);
 		console.log(controller.Surface());
 	});

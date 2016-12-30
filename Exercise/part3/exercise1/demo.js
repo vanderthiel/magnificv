@@ -1,5 +1,22 @@
 $(document).ready(function(){
-	// todo: do your things here
+	// --------------------------------------------------------------------
+    // Schrijf hier je code
+
+
+
+    // --------------------------------------------------------------------
+});
+
+// Module Pattern
+/*
+	var MyModule = (function(){
+		...
+		return {result: ‘something’};
+	})();
+*/
+
+// Rectangle object definition
+/*
 	function Rectangle(x,y){
 		this.Width = x;
 		this.Height = y;
@@ -8,4 +25,4 @@ $(document).ready(function(){
 	Rectangle.prototype.Surface = function(){
 		return this.Width * this.Height;
 	};
-});
+*/
