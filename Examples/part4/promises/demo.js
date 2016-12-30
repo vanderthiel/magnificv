@@ -12,10 +12,10 @@ $(document).ready(function(){
 	}
 
 	var myPromise = GetPromise();
-	$('.resultaat').html('Waiting');
+	$('.resultaat').html('Got promise');
 
 	myPromise.then(function(data){
-		$('.resultaat').html(data.value);
+		$('.resultaat').html('Result: ' + data.value);
 	});
 
 	$('.resultaat').html('Still Waiting');
