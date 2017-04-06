@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$('h2').click(function(){
 		$(this).html('I was clicked');
-		console.log('4. H1 clicked');
+		console.log('1. H1 clicked');
 	});
 	
 	

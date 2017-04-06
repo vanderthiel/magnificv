@@ -43,21 +43,21 @@ $(document).ready(function(){
 		
 		return {
 			shapes: {
-				rect: RectangleFactory,
-				cir: CircleFactory
+				createRectangle: RectangleFactory,
+				createCircle: CircleFactory
 			},
-			controller: ShapeControllerFactory
+			createController: ShapeControllerFactory
 		};
 	})();
 	
 	$("#rect").click(function(){
-		var rect = MyModule.shapes.rect($("#x").val(),$("#y").val());
-		var controller = MyModule.controller(rect);
+		var rect = MyModule.shapes.createRectangle($("#x").val(),$("#y").val());
+		var controller = MyModule.createController(rect);
 		console.log(controller.Surface());
 	});
 	$("#circle").click(function(){
-		var circle = MyModule.shapes.cir($("#x").val());
-		var controller = MyModule.controller(circle);
+		var circle = MyModule.shapes.createCircle($("#x").val());
+		var controller = MyModule.createController(circle);
 		console.log(controller.Surface());
 	});
 });
