@@ -1,0 +1,121 @@
+html{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(125,145,235);
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 120px;
+    background-color: black;
+    color: white;
+}
+header h1{
+    text-align: center;
+    font-size: 48px;
+}
+
+footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+#invoer{
+    position: absolute;
+    top: 150px;
+    bottom: 90px;
+    left: 30px;
+    width: 300px;
+    background-color: white;
+    border: 3px solid darkblue;
+}
+
+#resultaten{
+    position: absolute;
+    top: 150px;
+    bottom: 90px;
+    left: 360px;
+    right: 30px;
+    background-color: white;
+    border: 3px solid darkblue;
+}
+
+.formulier .rij{
+    min-height: 100px;
+}
+.formulier .rij input{
+    width: 80%;
+    margin: 10px 10%;
+    height: 30px;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+.formulier .rij textarea{
+    width: 80%;
+    margin: 10px 10%;
+    height: 50%;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+.formulier .rij button{
+    width: 80%;
+    margin: 10px 10%;
+    height: 20px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    background-color: lightblue;
+    color: darkblue;
+}
+
+.star {
+    height: 0;
+    width: 0;
+	font-size: 19px;
+	position: relative;
+	border-left: 1.382em solid transparent;
+	border-right: 1.382em solid transparent;
+	border-top: 1em solid #2C2C2C;
+}
+.star::before {
+	left: -1.45em;
+	top: -1.04em;
+	content: '';
+	position: absolute;
+	border-left: 1.382em solid transparent;
+	border-right: 1.382em solid transparent;
+	border-top: 1em solid #2C2C2C;
+
+	-webkit-transform: rotate(72deg);
+	-moz-transform: rotate(72deg);
+	-o-transform: rotate(72deg);
+	-ms-transform: rotate(72deg);
+	transform: rotate(72deg);
+}
+.star::after {
+	left: -1.35em;
+	top: -1.04em;
+	content: '';
+	position: absolute;
+	border-left: 1.382em solid transparent;
+	border-right: 1.382em solid transparent;
+	border-top: 1em solid #2C2C2C;
+
+	-webkit-transform: rotate(-72deg);
+	-moz-transform: rotate(-72deg);
+	-o-transform: rotate(-72deg);
+	-ms-transform: rotate(-72deg);
+	transform: rotate(-72deg);
+}

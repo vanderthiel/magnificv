@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <link href="app.css" rel="stylesheet" type="text/css" />
+        <script src="jquery-3.1.1.js"></script>
+        <script src="mvc.js"></script>
+        <script src="app.js"></script>
+        <title>Klant feedback</title>
+    </head>
+    <body>
+        <header>
+            <h1>Klant feedback applicatie</h1>
+        </header>
+
+        <section id="invoer">
+            <div class="formulier">
+                <div class="rij">
+                    <input type="text" id="naam" placeholder="Voer je naam in..." />
+                </div>
+                <div class="rij">
+                    <span class="star" data-value="1"></span>
+                    <span class="star" data-value="2"></span>
+                    <span class="star" data-value="3"></span>
+                    <span class="star" data-value="4"></span>
+                    <span class="star" data-value="5"></span>
+                </div>
+                <div class="rij">
+                    <textarea id="terugkoppeling"></textarea>
+                </div>
+                <div class="rij">
+                    <button type="button" id="verstuur">Stuur op</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="resultaten"></section>
+
+        <footer>
+            &copy; Edwin inc
+        </footer>
+    </body>
+</html>
