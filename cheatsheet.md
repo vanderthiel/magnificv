@@ -45,6 +45,22 @@ $('.someClass').click(function(){
 });
 ```
 
+Using jquery to get page values:
+
+```js
+    // Thes are a couple of ways, but there are more
+    $('.someClass').val();
+    $('p').html();
+```
+
+Using jquery to modify content:
+
+```js
+    // Thes are a couple of ways, but there are more
+    $('.someClass').append('<div>element</div>');
+    var paragraph = $('p').clone();
+```
+
 Asynchronous programming using promises:
 
 ```js
