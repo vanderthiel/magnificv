@@ -1,0 +1,21 @@
+.button {
+	background-color: lightgray;
+	color: black;
+	border: 1px solid gray;
+	border-radius: 4px;
+	padding: 10px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.form-field {
+	clear: both;
+}
+
+.form-field div {
+	float: left;
+}
+
+.result {
+	padding: 20px;
+}
