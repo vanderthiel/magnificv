@@ -1,0 +1,17 @@
+.canvas{
+    width: 480px;
+    height: 480px;
+    background-color: black;
+
+    position: relative;
+}
+
+.templates{
+    display: none;
+}
+.tile{
+    position: absolute;
+    color: white;
+    border: solid 1px white;
+    background-image: url('katje.png');
+}
