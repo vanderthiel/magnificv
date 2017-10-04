@@ -32,9 +32,11 @@ $(document).ready(function(){
     Board.prototype.Draw = function(){
         $('.canvas').empty();
 
+        var ctr = 0;
         this.tiles.forEach(function(tile) {
             var temp = $('.templates .tile').clone();
             temp.html(tile.xpos + ',' + tile.ypos + '<br>' + tile.txpos + ',' + tile.typos);
+            temp.attr('data-pos', ctr++);
 
             temp.css('top', tile.ypos * this.tileHeight);
             temp.css('left', tile.xpos * this.tileWidth);
@@ -45,20 +47,19 @@ $(document).ready(function(){
 
             var self = this;
             temp.click(function(){
-                if(self.memTile != null){
+                if(self.memTile instanceof Tile){
+                    var toTile = self.tiles[$(this).attr('data-pos')]
                     // switch tiles
-                    var tempx = this.xpos;
-                    var tempy = this.ypos;
+                    var tempx = toTile.xpos;
+                    var tempy = toTile.ypos;
 
-                    this.xpos = self.memTile.xpos;
-                    this.ypos = self.memTile.ypos;
-                    self.memTile.xpos = tempx;
-                    self.memTile.ypos = tempy;
+                    toTile.Move(self.memTile.xpos, self.memTile.ypos);
+                    self.memTile.Move(tempx, tempy);
 
                     self.memTile = null;
                     self.Draw();
                 } else {
-                    self.memTile = this;
+                    self.memTile = self.tiles[$(this).attr('data-pos')];
                 }
             });
 
