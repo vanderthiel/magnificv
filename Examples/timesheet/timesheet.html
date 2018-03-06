@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script src="../../jquery-1.11.3.js"></script>
+		<script src="timesheet.js"></script>
+    </head>
+    <body>
+        <section id="templates">
+            <tr class="day">
+                <td class="name"></td>
+                <td class="110"></td>
+                <td class="120"></td>
+                <td class="160"></td>
+                <td class="140"></td>
+                <td class="100"></td>
+            </tr>
+        </section>
+
+        <section>
+            <div>
+                Category:
+                <select id="category">
+                    <option value="110">holiday</option>
+                    <option value="120">sick</option>
+                    <option value="160">maternity leave</option>
+                    <option value="140">available</option>
+                    <option value="100">work</option>
+                </select>
+            </div>
+            <div>
+                Start date:
+                <input type="date" id="startdate" />
+            </div>
+            <div>
+                End date:
+                <input type="date" id="enddate" />
+            </div>
+            <div>
+                Register weekends:
+                <input type="checkbox" id="weekends" />
+            </div>
+            <div>
+                    <input type="button" id="save" value="Save" />
+                </div>
+            </section>
+
+            <section>
+                <table id="results">
+                    <tr>
+                        <th>Name</th>
+                        <th>Holiday</th>
+                        <th>Sick</th>
+                        <th>Maternity</th>
+                        <th>Available</th>
+                        <th>Work</th>
+                    </tr>
+                </table>
+            </section>
+    </body>
+</html>

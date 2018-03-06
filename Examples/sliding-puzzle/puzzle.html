@@ -1,0 +1,25 @@
+<html>
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<script src="../../jquery-1.11.3.js"></script>
+		<script src="puzzle.js"></script>
+    </head>
+    <body>
+        <section>
+            <select id="image">
+                <option value="cat1.jpg">First Cat</option>
+                <option value="cat2.jpg">Second Cat</option>
+                <option value="dog1.jpg">First Dog</option>
+            </select>
+            <input type="number" id="dimx" value="5" />
+            <input type="number" id="dimy" value="5" />
+            <input type="button" id="start" value="Start new game" />
+        </section>
+
+        <section id="game">
+            <div id="timer">00:00</div>
+            <div id="puzzle"></div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+html,body {
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+}
+
+section { text-align: center; }
+select, input {
+    height: 40px;
+    font-size: 1.5em;
+}
+input[type=number] {
+    width: 60px;
+    text-align: center;
+}
+
+#game {
+    padding-top: 20px;
+    background-color: gray;
+    border-radius: 5px;
+}
+#puzzle {
+    width: 500px;
+    height: 500px;
+    padding: 20px;
+    position: relative;
+    margin: auto;
+}
+
+.piece {
+    position: absolute;
+    border: 1px solid black;
+    overflow: hidden;
+}
