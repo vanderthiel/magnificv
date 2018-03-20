@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="demo.css" rel="stylesheet" type="text/css" />
+		<script src="../../../jquery-1.11.3.js"></script>
+		<script src="demo.js"></script>
+	</head>
+	<body>
+		<section id="templates">
+			<div class="opdracht" data-id="-1">
+				<div><span>Klant</span>: <span class="klant"></span></div>
+				<div><span>Beschrijving</span>: <span class="beschrijving"></span></div>
+				<div><span>Cijfer</span>: <span class="cijfer"></span></div>
+				<div class="delete">X</div>
+			</div>
+		</section>
+
+		<section>
+			<h2>Nieuwe opdracht</h2>
+			<div class="input">Klant: <input type="text" id="klant" /></div>
+			<div class="input">Beschrijving: <input type="text" id="beschrijving" /></div>
+			<div class="input">Cijfer: <input type="text" id="cijfer" /></div>
+			
+			<div id="save" class="button">Op slaan</div>
+			<div id="reset" class="button">Annuleer</div>
+		</section>
+	
+		<section>
+			<h2>Resultaten</h2>
+			<div id="resultaten">&nbsp;</div>
+		</section>
+	</body>
+</html>
